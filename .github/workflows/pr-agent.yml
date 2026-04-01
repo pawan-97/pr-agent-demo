@@ -20,13 +20,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           config.model: "gemini/gemini-1.5-flash"
           config.fallback_models: '["gemini/gemini-1.5-flash"]'
-<<<<<<< HEAD
           # Changed from secrets.GEMINI_API to secrets.GEMINI_API_KEY
           GOOGLE_AI_STUDIO.GEMINI_API_KEY: ${{ secrets.GEMINI_API }} 
           
-          # Tell PR Agent to run on 'synchronize' (when you push new commits to an open PR)
-          github_action_config.auto_review: true
-=======
-          GOOGLE_AI_STUDIO.GEMINI_API_KEY: ${{ secrets.GEMINI_API }}
-
->>>>>>> 6a9b64ecd58ed5902a1c73e8c097a90eccee0c0e
