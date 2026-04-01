@@ -14,10 +14,15 @@ jobs:
       contents: write
     steps:
       - name: PR Agent action step
-        uses: Codium-ai/pr-agent@main
+        uses: qodo-ai/pr-agent@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CONFIG__MODEL: "gemini/gemini-1.5-flash"
-          CONFIG__FALLBACK_MODELS: '["gemini/gemini-1.5-flash"]'
-          GOOGLE_AI_STUDIO__GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GITHUB_ACTION_CONFIG__AUTO_REVIEW: "true"        
+          # Set the model to Gemini
+          config.model: "gemini/gemini-1.5-flash"
+          config.fallback_models: '["gemini/gemini-1.5-flash"]'
+          # Add your Gemini API key
+          "GOOGLE_AI_STUDIO.GEMINI_API_KEY": "${{ secrets.GEMINI_API_KEY }}"
+          # Tool configuration
+          github_action_config.auto_review: "true"
+          github_action_config.auto_describe: "true"
+          github_action_config.auto_improve: "true"   
