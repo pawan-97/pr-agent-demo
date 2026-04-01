@@ -3,6 +3,8 @@ name: PR Agent Review
 on:
   pull_request:
     types: [opened, synchronize]
+  issue_comment:
+    types: [created, edited]
 
 jobs:
   pr_agent_job:
@@ -15,5 +17,11 @@ jobs:
       - name: PR Agent action step
         uses: Codium-ai/pr-agent@main
         env:
-          OPENAI_KEY: ${{ secrets.GEMINI_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          config.model: "gemini/gemini-1.5-flash"
+          config.fallback_models: '["gemini/gemini-1.5-flash"]'
+          # Changed from secrets.GEMINI_API to secrets.GEMINI_API_KEY
+          GOOGLE_AI_STUDIO.GEMINI_API_KEY: ${{ secrets.GEMINI_API }} 
+          
+          # Tell PR Agent to run on 'synchronize' (when you push new commits to an open PR)
+          github_action_config.auto_review: true
