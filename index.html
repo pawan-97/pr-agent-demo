@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fitanthropy</title>
     <style>
-        body { 
-            font-family: sans-serif; 
-            text-align: center; 
-            padding: 50px; 
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            padding: 50px;
             background-color: #1a1a1a;
             color: #f0f0f0;
         }
-        h1 { color: #3498db; }
+
+        h1 {
+            color: #3498db;
+        }
+
         .calculator {
             background-color: #2a2a2a;
             padding: 20px;
@@ -20,23 +25,38 @@
             display: inline-block;
             margin-top: 20px;
         }
-        input { margin: 5px; padding: 8px; border-radius: 4px; border: none; }
-        button { 
-            background-color: #3498db; 
-            color: white; 
-            border: none; 
-            padding: 10px 15px; 
-            border-radius: 4px; 
-            cursor: pointer; 
+
+        input {
+            margin: 5px;
+            padding: 8px;
+            border-radius: 4px;
+            border: none;
         }
-        button:hover { background-color: #2980b9; }
-        #result { margin-top: 15px; font-weight: bold; }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        #result {
+            margin-top: 15px;
+            font-weight: bold;
+        }
     </style>
 </head>
+
 <body>
-    <h1>Welcome to Fitanthropy!</h1>
+    <h1>Welcome to Fitanthropy BMI</h1>
     <p>Health, fitness, and giving back to the community.</p>
-    
+
     <div class="calculator">
         <h3>Quick BMI Calculator</h3>
         <input type="number" id="weight" placeholder="Weight in kg">
@@ -53,10 +73,10 @@
             // Let's see if the PR Agent catches it!
             let weight = document.getElementById('weight').value;
             let height = document.getElementById('height').value;
-            
+
             let heightInMeters = height / 100;
             let bmi = weight / (heightInMeters * heightInMeters);
-            
+
             let category = "";
             if (bmi < 18.5) category = "Underweight";
             else if (bmi >= 18.5 && bmi <= 24.9) category = "Normal weight";
@@ -67,4 +87,5 @@
         }
     </script>
 </body>
+
 </html>
